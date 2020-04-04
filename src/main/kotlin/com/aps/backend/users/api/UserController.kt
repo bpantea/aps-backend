@@ -3,14 +3,14 @@ package com.aps.backend.users.api
 import com.aps.backend.shared.utils.USER_API
 import com.aps.backend.users.api.dto.UserDto
 import com.aps.backend.users.api.dto.UserSavingDto
-import com.aps.backend.users.services.UserService
+import com.aps.backend.users.service.UserService
 import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping(USER_API)
 class UserController(private val userService: UserService) {
-    @GetMapping
-    fun getFullUser(): UserDto {
+    @GetMapping("/current-user")
+    fun getFullUser(): UserDto? {
         return userService.getUserEntity()
     }
 
@@ -22,10 +22,5 @@ class UserController(private val userService: UserService) {
     @PostMapping("/register")
     fun register(@RequestBody user: UserSavingDto): UserDto {
         return userService.register(user)
-    }
-
-    @GetMapping("/register")
-    fun checkIfRegisterWorks(): String {
-        return "works"
     }
 }
