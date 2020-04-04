@@ -9,9 +9,9 @@ import javax.persistence.Id
 data class User(
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
-        var id: Long,
-        var username: String,
-        var password: String,
-        var email: String?,
-        var role: UserRole
+        var id: Long = 0,
+        var username: String = "",
+        var password: String = "",
+        var email: String? = null,
+        var role: UserRole = UserRole.USER
 )
