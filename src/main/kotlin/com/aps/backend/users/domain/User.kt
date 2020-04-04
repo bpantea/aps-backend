@@ -10,8 +10,9 @@ data class User(
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
         var id: Long = 0,
-        var username: String = "",
+        var email: String = "",
         var password: String = "",
-        var email: String? = null,
+        var firstName: String = "",
+        var lastName: String = "",
         var role: UserRole = UserRole.USER
 )
