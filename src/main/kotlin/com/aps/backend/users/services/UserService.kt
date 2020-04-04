@@ -4,4 +4,6 @@ import com.aps.backend.users.api.dto.UserDto
 
 interface UserService {
     fun getUserEntity(): UserDto
+
+    fun register(user: UserDto)
 }

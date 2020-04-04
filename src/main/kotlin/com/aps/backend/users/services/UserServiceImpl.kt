@@ -11,4 +11,8 @@ class UserServiceImpl(
     override fun getUserEntity(): UserDto {
         TODO()
     }
+
+    override fun register(user: UserDto) {
+        TODO("Not yet implemented")
+    }
 }
